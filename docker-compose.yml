@@ -1,0 +1,11 @@
+services:
+  mail-service:
+    build: .
+    environment:
+      PORT: "3000"
+      MAIL_PASSWORD: "${MAIL_PASSWORD}"
+      MAIL_SERVER: "${MAIL_SERVER}"
+      MAIL_API_KEY: "${MAIL_API_KEY}"      
+    ports:
+      - "3999:3000"
+
