@@ -1,8 +1,14 @@
 import express from "express"
 import nodemailer from "nodemailer"
+import cors from "cors"
 
 const app = express()
 app.use(express.json({ limit: "2mb" }))
+app.use(cors({
+  origin: "*",
+  methods: ["POST"],
+  allowedHeaders: ["Content-Type", "x-api-key"]
+}))
 
 const {
   PORT = "3000",
